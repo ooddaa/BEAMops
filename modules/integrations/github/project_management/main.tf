@@ -8,7 +8,7 @@ terraform {
 }
 
 locals {
-  repository_name = "kanban"
+  repository_name = "BEAMops-2"
   github_owner = "ooddaa"
 }
 
@@ -16,9 +16,9 @@ provider "github" {
   owner = local.github_owner
 }
 
-resource "github_repository" "kanban" {
+resource "github_repository" "BEAMops-2" {
   name = local.repository_name
-  description = "BEAMOps sandbox"
+  description = "Devops for BEEEEEEEEAM, bim bim bimops, beam beam beamops"
   visibility = "private"
   has_issues = true
   auto_init = true
@@ -30,17 +30,6 @@ resource "github_repository_milestone" "epics" {
   repository = local.repository_name
   owner = local.github_owner
   title = "Infrastructure"
-  description = "Dockerfile, provisoning AWS, local env, base AMI with Packer"
-  due_date = "2025-01-23"
+  description = "Dockerfile, provisoning GCP, local env"
+  due_date = "2025-03-23"
 }
-
-resource "github_repository" "lol" {
-  name = "lol"  
-  description = "test"
-  visibility = "private"
-  has_issues = true
-  auto_init = true
-  gitignore_template = "Elixir"
-  delete_branch_on_merge = true
-}
-
